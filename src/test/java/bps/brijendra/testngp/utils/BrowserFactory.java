@@ -5,9 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrowserFactory {
 
-	public static WebDriver driver;
+	public WebDriver driver;
 
-	public static WebDriver setWebDeriver(String browser) {
+	public WebDriver setWebDeriver(String browser) {
 
 		switch (browser) {
 		case "CHROME":
@@ -26,11 +26,11 @@ public class BrowserFactory {
 		default:
 			break;
 		}
-		GenericUtils.driver = driver;
+		System.out.println(driver.toString());
 		return driver;
 	}
 	
-	public static void teardown() {
+	public void teardown() {
 		if (driver!=null) {
 			driver.close();
 		}

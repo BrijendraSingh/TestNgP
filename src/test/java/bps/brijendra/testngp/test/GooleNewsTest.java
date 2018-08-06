@@ -1,54 +1,62 @@
 package bps.brijendra.testngp.test;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import bps.brijendra.testngp.configuration.BrowerConfig;
+import bps.brijendra.testngp.page.CommonPage;
 import bps.brijendra.testngp.page.GoogleNews;
 import bps.brijendra.testngp.utils.BrowserFactory;
+import org.openqa.selenium.WebDriver;
 
-public class GooleNewsTest {
-	@BeforeMethod
-	public void setup() {
-		BrowserFactory.setWebDeriver(BrowerConfig.CHROME.toString());
-	}
+public class GooleNewsTest extends BrowserFactory{
 	
 	@Test
 	public void testOne() {
 		System.out.println("testOne Started");
-		GoogleNews gnews = new GoogleNews();
-		gnews.launchApp();
-		gnews.CloseApp();
+		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		CommonPage commonpage = new CommonPage(driver);
+		commonpage.launchApp();
+
+		GoogleNews googlenews = new GoogleNews(driver);
+		googlenews.readGnews();
+		googlenews.readHeadLines();
+		commonpage.closeApp();
 	}
 	
 	@Test
 	public void testTwo() {
 		System.out.println("testTwo Started");
-		GoogleNews gnews = new GoogleNews();
-		gnews.launchApp();
-		gnews.CloseApp();
+		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		CommonPage commonpage = new CommonPage(driver);
+		commonpage.launchApp("https://www.seleniumhq.org/download/");
+
+		GoogleNews googlenews = new GoogleNews(driver);
+		googlenews.readGnews();
+		commonpage.closeApp();
 	}
 	
 	@Test
 	public void testThree() {
 		System.out.println("testThree Started");
-		GoogleNews gnews = new GoogleNews();
-		gnews.launchApp();
-		gnews.CloseApp();
+		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		CommonPage commonpage = new CommonPage(driver);
+		commonpage.launchApp("https://www.seleniumhq.org/");
+
+		GoogleNews googlenews = new GoogleNews(driver);
+		googlenews.readGnews();
+		commonpage.closeApp();
 	}
 	
 	@Test
 	public void testFour() {
 		System.out.println("testFour Started");
-		GoogleNews gnews = new GoogleNews();
-		gnews.launchApp();
-		gnews.CloseApp();
+
+		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		CommonPage commonpage = new CommonPage(driver);
+		commonpage.launchApp("http://testng.org");
+
+		GoogleNews googlenews = new GoogleNews(driver);
+		googlenews.readGnews();
+		commonpage.closeApp();
 	}
 	
-	@AfterMethod
-	public void teardown() {
-		//BrowserFactory.teardown();
-	}
-
 }

@@ -9,15 +9,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 
 public class GenericUtils {
-	public static WebDriver driver;
-
-	public void launchURL(String url) {
-		driver.navigate().to(url);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
-	}
 
 	public String readConfig(String key) {
 		String value=null;

@@ -1,15 +1,16 @@
 package bps.brijendra.testngp.configuration;
 
-public enum BrowerConfig {
-	CHROME,MOZILA,IE
+public enum BrowserType {
+	//CHROME,MOZILA,IE
 	
-	/*
-	 * CHROME("chrome"),MOZILA("mozila"),IE("ie");
+	 CHROME("chrome"),MOZILA("mozila"),IE("ie");
 	private String s;
-	BrowerConfig(final String s) {
+
+	BrowserType(final String s) {
 		this.s = s;
 	}
-	  public String getValue() {
+
+	public String getValue() {
 	        return s;
 	    }
 	
@@ -17,6 +18,6 @@ public enum BrowerConfig {
 	public String toString() {
 		return this.toString();
 	}
-	*/
+	
 
 }

@@ -11,8 +11,8 @@ public class GooleNewsTest extends BrowserFactory{
 	
 	@Test
 	public void testOne() {
-		System.out.println("testOne Started");
-		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		System.out.println("testOne Started on Grid Hub");
+		WebDriver driver = new BrowserFactory().setWebDeriver("REMOTE");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp();
 
@@ -21,6 +21,7 @@ public class GooleNewsTest extends BrowserFactory{
 		googlenews.readHeadLines();
 		commonpage.closeApp();
 	}
+	
 	
 	@Test
 	public void testTwo() {
@@ -48,9 +49,9 @@ public class GooleNewsTest extends BrowserFactory{
 	
 	@Test
 	public void testFour() {
-		System.out.println("testFour Started");
+		System.out.println("testFour Started on grid hub");
 
-		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		WebDriver driver = new BrowserFactory().setWebDeriver("REMOTE");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp("http://testng.org");
 

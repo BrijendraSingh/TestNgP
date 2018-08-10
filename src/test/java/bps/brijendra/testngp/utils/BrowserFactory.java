@@ -24,6 +24,7 @@ public class BrowserFactory {
 
 			break;
 		default:
+			System.out.println("No Broser found with [" + browser + "] name");
 			break;
 		}
 		System.out.println(driver.toString());

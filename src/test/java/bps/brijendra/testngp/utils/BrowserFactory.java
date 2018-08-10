@@ -2,6 +2,7 @@ package bps.brijendra.testngp.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
 
@@ -12,10 +13,12 @@ public class BrowserFactory {
 		switch (browser) {
 		case "CHROME":
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/java/bps/brijendra/testngp/drivers/chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "/usr/bin/geckodriver");
 			driver = new ChromeDriver();
 			break;
 		case "MOZILA":
-
+			System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+			driver = new FirefoxDriver();
 			break;
 		case "IE":
 

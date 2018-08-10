@@ -1,18 +1,18 @@
 package bps.brijendra.testngp.test;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import bps.brijendra.testngp.page.CommonPage;
 import bps.brijendra.testngp.page.GoogleNews;
 import bps.brijendra.testngp.utils.BrowserFactory;
-import org.openqa.selenium.WebDriver;
 
 public class GooleNewsTest extends BrowserFactory{
 	
 	@Test
 	public void testOne() {
 		System.out.println("testOne Started");
-		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		WebDriver driver = new BrowserFactory().setWebDeriver("MOZILA");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp();
 
@@ -25,7 +25,7 @@ public class GooleNewsTest extends BrowserFactory{
 	@Test
 	public void testTwo() {
 		System.out.println("testTwo Started");
-		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		WebDriver driver = new BrowserFactory().setWebDeriver("MOZILA");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp("https://www.seleniumhq.org/download/");
 
@@ -37,7 +37,7 @@ public class GooleNewsTest extends BrowserFactory{
 	@Test
 	public void testThree() {
 		System.out.println("testThree Started");
-		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		WebDriver driver = new BrowserFactory().setWebDeriver("MOZILA");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp("https://www.seleniumhq.org/");
 
@@ -50,7 +50,7 @@ public class GooleNewsTest extends BrowserFactory{
 	public void testFour() {
 		System.out.println("testFour Started");
 
-		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		WebDriver driver = new BrowserFactory().setWebDeriver("MOZILA");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp("http://testng.org");
 

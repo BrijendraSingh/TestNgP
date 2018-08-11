@@ -3,6 +3,7 @@ package bps.brijendra.testngp.page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Navigation;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 import bps.brijendra.testngp.utils.GenericUtils;
 
@@ -16,13 +17,17 @@ public class CommonPage extends GenericUtils {
 
 	public void launchApp() {
 		driver.navigate().to(readConfig("AppUrl"));
-		System.out.println("Google News is launched: "+ driver.toString());
+		String s = "Google News is launched: "+ driver.toString();
+		System.out.println(s);
+		Reporter.log(s);
 	}
 	
 	
 	public void launchApp(String url) {
 		driver.navigate().to(url);
-		System.out.println(url + ": is launched: " +  driver.toString());
+		String s = url + ": is launched: " +  driver.toString();
+		System.out.println();
+		Reporter.log(s);
 	}
 	
 	
@@ -31,6 +36,7 @@ public class CommonPage extends GenericUtils {
 			driver.close();
 		}else {
 			System.out.println("driver is null or already closed");
+			Reporter.log("driver is null or already closed");
 		}
 	}
 }

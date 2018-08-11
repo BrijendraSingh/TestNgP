@@ -39,7 +39,7 @@ public class GooleNewsTest extends BrowserFactory{
 	@Test
 	public void testThree() {
 		System.out.println("testThree Started");
-		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		WebDriver driver = new BrowserFactory().setWebDeriver("REMOTE_CHROME");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp("https://www.seleniumhq.org/");
 
@@ -52,7 +52,7 @@ public class GooleNewsTest extends BrowserFactory{
 	public void testFour() {
 		System.out.println("testFour Started on grid hub");
 
-		WebDriver driver = new BrowserFactory().setWebDeriver("REMOTE");
+		WebDriver driver = new BrowserFactory().setWebDeriver("REMOTE_FIREFOX");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp("http://testng.org");
 

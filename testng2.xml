@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"> 
-<suite name="Default suite" > 
+<suite name="Default suite" parallel="methods" thread-count="5" > 
   <test name="Default test"> 
     <classes> 
       <class name="bps.brijendra.testngp.test.GooleNewsTest">
       <methods>
       	<include name="testOne"></include>
+      	<include name="testTwo"></include>
       </methods>
       </class>  
     </classes> 

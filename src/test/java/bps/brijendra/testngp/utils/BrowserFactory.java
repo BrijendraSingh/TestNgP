@@ -24,18 +24,26 @@ public class BrowserFactory {
 		case "MOZILA":
 
 			break;
-		case "IE":
-
-			break;
-		case "REMOTE":
-			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/java/bps/brijendra/testngp/drivers/chromedriver.exe");
-			//ChromeOptions options = new ChromeOptions();
-			DesiredCapabilities cap = new DesiredCapabilities().chrome();
-			cap.setPlatform(Platform.WIN10);
-			cap.setBrowserName("chrome");
+		case "REMOTE_FIREFOX":
+			DesiredCapabilities cap_firfox = new DesiredCapabilities().firefox();
+			cap_firfox.setPlatform(Platform.WIN10);
+			cap_firfox.setBrowserName("firefox");
 			//options.merge(cap);
 			try {
-				driver = new RemoteWebDriver(new URL("http://192.168.49.20:4547/wd/hub"), cap);
+				driver = new RemoteWebDriver(new URL("http://192.168.49.20:4546/wd/hub"), cap_firfox);
+			} catch (MalformedURLException e) {
+				System.out.println("Exception in remotewebdriver: " +e.getMessage());
+			}
+			break;
+		case "REMOTE_CHROME":
+			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/java/bps/brijendra/testngp/drivers/chromedriver.exe");
+			//ChromeOptions options = new ChromeOptions();
+			DesiredCapabilities cap_chrome = new DesiredCapabilities().chrome();
+			cap_chrome.setPlatform(Platform.WIN10);
+			cap_chrome.setBrowserName("chrome");
+			//options.merge(cap);
+			try {
+				driver = new RemoteWebDriver(new URL("http://192.168.49.20:4547/wd/hub"), cap_chrome);
 			} catch (MalformedURLException e) {
 				System.out.println("Exception in remotewebdriver: " +e.getMessage());
 			}

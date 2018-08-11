@@ -12,7 +12,7 @@ public class GooleNewsTest extends BrowserFactory{
 	@Test
 	public void testOne() {
 		System.out.println("testOne Started on Grid Hub");
-		WebDriver driver = new BrowserFactory().setWebDeriver("REMOTE");
+		WebDriver driver = new BrowserFactory().setWebDeriver("REMOTE_CHROME");
 		CommonPage commonpage = new CommonPage(driver);
 		commonpage.launchApp();
 
@@ -26,12 +26,13 @@ public class GooleNewsTest extends BrowserFactory{
 	@Test
 	public void testTwo() {
 		System.out.println("testTwo Started");
-		WebDriver driver = new BrowserFactory().setWebDeriver("CHROME");
+		WebDriver driver = new BrowserFactory().setWebDeriver("REMOTE_FIREFOX");
 		CommonPage commonpage = new CommonPage(driver);
-		commonpage.launchApp("https://www.seleniumhq.org/download/");
-
+		//commonpage.launchApp("https://www.seleniumhq.org/download/");
+		commonpage.launchApp();
 		GoogleNews googlenews = new GoogleNews(driver);
 		googlenews.readGnews();
+		googlenews.readHeadLines();
 		commonpage.closeApp();
 	}
 	

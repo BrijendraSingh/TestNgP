@@ -5,4 +5,5 @@ java -jar selenium-server-standalone-3.4.0.jar -role hub
 
 Node registration
 java -Dwebdriver.chrome.driver=C:\Users\Brij-RegularUser\git\TestNgP\testngp\src\main\java\bps\brijendra\testngp\drivers\chromedriver.exe -jar selenium-server-standalone-3.4.0.jar -role node -hub http://192.168.49.20:4444/grid/register/ -port 4547
+java -Dwebdriver.gecko.driver=C:\Users\Brij-RegularUser\git\TestNgP\testngp\src\main\java\bps\brijendra\testngp\drivers\geckodriver.exe -jar selenium-server-standalone-3.4.0.jar -role node -hub http://192.168.49.20:4444/grid/register/ -port 4546
 

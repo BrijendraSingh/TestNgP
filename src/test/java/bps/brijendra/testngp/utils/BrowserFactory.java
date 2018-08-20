@@ -37,11 +37,11 @@ public class BrowserFactory {
 			break;
 		case "REMOTE_CHROME":
 			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/java/bps/brijendra/testngp/drivers/chromedriver.exe");
-			//ChromeOptions options = new ChromeOptions();
-			DesiredCapabilities cap_chrome = new DesiredCapabilities().chrome();
+			ChromeOptions options = new ChromeOptions();
+			DesiredCapabilities cap_chrome = new DesiredCapabilities();
 			cap_chrome.setPlatform(Platform.WIN10);
 			cap_chrome.setBrowserName("chrome");
-			//options.merge(cap);
+			options.merge(cap_chrome);
 			try {
 				driver = new RemoteWebDriver(new URL("http://192.168.0.101:4547/wd/hub"), cap_chrome);
 			} catch (MalformedURLException e) {

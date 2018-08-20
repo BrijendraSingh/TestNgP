@@ -30,7 +30,7 @@ public class BrowserFactory {
 			cap_firfox.setBrowserName("firefox");
 			//options.merge(cap);
 			try {
-				driver = new RemoteWebDriver(new URL("http://192.168.49.20:4546/wd/hub"), cap_firfox);
+				driver = new RemoteWebDriver(new URL("http://192.168.0.101:4546/wd/hub"), cap_firfox);
 			} catch (MalformedURLException e) {
 				System.out.println("Exception in remotewebdriver: " +e.getMessage());
 			}
@@ -43,7 +43,7 @@ public class BrowserFactory {
 			cap_chrome.setBrowserName("chrome");
 			//options.merge(cap);
 			try {
-				driver = new RemoteWebDriver(new URL("http://192.168.49.20:4547/wd/hub"), cap_chrome);
+				driver = new RemoteWebDriver(new URL("http://192.168.0.101:4547/wd/hub"), cap_chrome);
 			} catch (MalformedURLException e) {
 				System.out.println("Exception in remotewebdriver: " +e.getMessage());
 			}

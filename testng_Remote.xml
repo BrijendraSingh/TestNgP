@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"> 
+<suite name="Default suite" parallel="methods" thread-count="5" > 
+  <test name="Default test"> 
+    <classes> 
+      <class name="bps.brijendra.testngp.test.GooleNews_RemoteTest">
+      <methods>
+      	<include name="testOne_SL"></include>
+      	<include name="testTwo_SL"></include>
+      	<include name="testThree_BS"></include>
+      	<include name="testFour_BS"></include>
+      </methods>
+      </class>  
+    </classes> 
+  </test> <!-- Default test --> 
+</suite> <!-- Default suite -->
